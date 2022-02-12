@@ -43,11 +43,11 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,md,json}": [
+    "*.{js,jsx,css,md,json}": [
       "prettier --write"
     ],
-    "*.{js,json}": [
-      "eslint --ext [.json,.js] --fix"
+    "*.{js,jsx,json}": [
+      "eslint --ext [.json,.jsx] --fix"
     ]
   }
 }
