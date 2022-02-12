@@ -5,6 +5,9 @@ extends:
     - 'plugin:react/recommended'
     - 'plugin:json/recommended'
     - prettier
+settings:
+    react:
+        version: latest
 parserOptions:
     ecmaFeatures:
         jsx: true

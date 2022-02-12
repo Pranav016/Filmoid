@@ -6,12 +6,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "eslint-prettier-check": "eslint-config-prettier ./src/App.jsx",
+    "eslint-prettier-check": "eslint-config-prettier ./src/App.js",
     "lint": "eslint --fix . --ext .js,.json",
-    "lint-check": "eslint .",
+    "lint-check": "eslint . --ext .js,.json",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "axios": "^0.25.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -31,6 +34,7 @@
     "husky": "^7.0.0",
     "lint-staged": "^12.3.3",
     "prettier": "^2.5.1",
+    "semantic-release": "^19.0.2",
     "vite": "^2.8.0"
   },
   "config": {
