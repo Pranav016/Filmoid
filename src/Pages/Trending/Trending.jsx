@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./Trending.css";
 import SingleContent from "../../components/SingleContent/SingleContent";
+import CustomPagination from "../../components/Pagination/CustomPagination";
 
 const Trending = () => {
+  const [page, setPage] = useState(1);
   const [trending, setTrending] = useState([]);
   const fetchTrending = async () => {
     let { VITE_API_KEY } = import.meta.env;
     let data = await fetch(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=${VITE_API_KEY}`
+      `https://api.themoviedb.org/3/trending/all/day?api_key=${VITE_API_KEY}&page=${page}`
     );
     let obj = await data.json();
     setTrending(obj.results);
@@ -15,7 +17,7 @@ const Trending = () => {
 
   useEffect(() => {
     fetchTrending();
-  }, []);
+  }, [page]);
   return (
     <div>
       <span className="pageTitle">Trending</span>
@@ -35,6 +37,7 @@ const Trending = () => {
             );
           })}
       </div>
+      <CustomPagination setPage={setPage} />
     </div>
   );
 };
