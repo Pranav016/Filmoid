@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import Genre from "../../components/Genre";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 import SingleContent from "../../components/SingleContent/SingleContent";
+import useGenre from "../../hooks/useGenre";
 
 const Movies = () => {
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
-  const [genreforURL, setGenreforURL] = useState("");
   const [numberOfPages, setNumberOfPages] = useState(10);
   const [genres, setGenres] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState([]);
+  const genreforURL = useGenre(selectedGenre);
   const fetchMovies = async () => {
     let { VITE_API_KEY } = import.meta.env;
     let data = await fetch(

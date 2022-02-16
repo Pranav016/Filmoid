@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Chip, Stack } from "@mui/material";
+import { Chip } from "@mui/material";
 
 const Genre = ({
   type,
