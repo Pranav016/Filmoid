@@ -18,7 +18,7 @@ const Movies = () => {
     );
     let obj = await data.json();
     setContent(obj.results);
-    setNumberOfPages(obj.totalPages);
+    setNumberOfPages(obj.total_pages);
   };
 
   useEffect(() => {
@@ -53,7 +53,9 @@ const Movies = () => {
             );
           })}
       </div>
-      <CustomPagination setPage={setPage} numberOfPages={numberOfPages} />
+      {numberOfPages > 1 && (
+        <CustomPagination setPage={setPage} numberOfPages={numberOfPages} />
+      )}
     </div>
   );
 };
