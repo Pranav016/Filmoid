@@ -7,7 +7,7 @@ import useGenre from "../../hooks/useGenre";
 const Movies = () => {
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
-  const [numberOfPages, setNumberOfPages] = useState(10);
+  const [numberOfPages, setNumberOfPages] = useState(1);
   const [genres, setGenres] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState([]);
   const genreforURL = useGenre(selectedGenre);
@@ -18,7 +18,7 @@ const Movies = () => {
     );
     let obj = await data.json();
     setContent(obj.results);
-    setNumberOfPages(obj.totalPages);
+    setNumberOfPages(obj.total_pages);
   };
 
   useEffect(() => {
@@ -53,7 +53,9 @@ const Movies = () => {
             );
           })}
       </div>
-      <CustomPagination setPage={setPage} numberOfPages={numberOfPages} />
+      {numberOfPages > 1 && (
+        <CustomPagination setPage={setPage} numberOfPages={numberOfPages} />
+      )}
     </div>
   );
 };
