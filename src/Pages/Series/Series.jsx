@@ -7,7 +7,7 @@ import useGenre from "../../hooks/useGenre";
 const Series = () => {
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
-  const [numberOfPages, setNumberOfPages] = useState(10);
+  const [numberOfPages, setNumberOfPages] = useState(1);
   const [genres, setGenres] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState([]);
   const genreforURL = useGenre(selectedGenre);
