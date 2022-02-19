@@ -1,3 +1,13 @@
+# Filmoid
+
+- Filmoid is a movie finder app that is using [TMDB API](https://www.themoviedb.org/documentation/api) for fetching all the movies. It is developed using React.js
+- It has all the filtering as well as searching features, implented with help of state and hooks.
+- More features such as playlists coming soon.
+
+## Demo-
+
+![Filmoid](https://user-images.githubusercontent.com/54665036/154806877-9accd493-dec3-4bed-9dde-82769bac03a8.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
